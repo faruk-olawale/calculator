@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <div id="container-content">
+      <main>
+        <div class="toggleSection">
+           <p>Calc</p>
+           <summary>
+            <small>THEME</small>
+            <div>
+              <article>
+                  <aside id="firstColor">1</aside>
+                  <aside id="secondcolor">2</aside>
+                  <aside id="thirdcolor">3</aside>
+              </article>
+              <div  id="mother"> <span id="daughter"></span></div>
+            </div>
+           </summary>
+        </div>
+      <input type="text" id="display">
+      <section id="section">
+        <aside>
+      <button onclick=" display.value += '7'" value="7" >7</button>
+      <button onclick="display.value += '8'">8</button>
+      <button onclick="display.value += '9'">9</button>
+      <button onclick="display.value = display.value.toString().slice(0, -1)" id="delete">DEL</button>
+      </aside>
+        <aside>
+      <button onclick="display.value += '4'">4</button>
+      <button onclick="display.value += '5'">5</button>
+      <button onclick="display.value += '6'">6</button>
+      <button onclick="display.value += '+'">+</button>
+      </aside>
+        <aside>
+      <button onclick="display.value += '1'">1</button>
+      <button onclick="display.value += '2'">2</button>
+      <button onclick="display.value += '3'">3</button>
+      <button onclick="display.value += '-'">-</button>
+      </aside>
+
+        <aside>
+      <button onclick="display.value +='.'">.</button>
+      <button onclick="display.value += '0'">0</button>
+      <button onclick="display.value +='/'">/</button>
+      <button onclick="display.value += '*'">x</button>
+      </aside>
+      <aside>
+      <button onclick="display.value = '' " id="reset">RESET</button>
+      <button id="equal">=</button>
+      </aside>
+      </section>
+      </main>
+    </div>
+  </div>
+  <script>
+ const equal = document.getElementById("equal");
+    equal.onclick = function () {
+    try {
+      display.value = eval(display.value);
+    } catch (error) {
+      display.value = "An error ocurred";
+    }
+    }
+    const firstColor = document.getElementById("firstColor");
+    const secondcolor = document.getElementById("secondcolor");
+    const thirdcolor = document.getElementById("thirdcolor");
+    const toggleSection = document.querySelector(".toggleSection")
+    const section = document.getElementById("section");
+    const display = document.getElementById("display");
+    const deletebtn = document.getElementById("delete");
+    const resetbtn = document.getElementById("reset");
+    const btn = document.getElementsByTagName("button");
+
+
+    const container = document.querySelector(".container");
+
+    const mother = document.getElementById("mother");
+    const daughter = document.getElementById("daughter")
+
+    secondcolor.onclick = function(){
+      container.style.backgroundColor ="hsl(0, 0%, 90%)";
+      toggleSection.style.color ="hsl(60, 10%, 19%)";
+      section.style.backgroundColor =" hsl(0, 5%, 81%)";
+      display.style.backgroundColor = " hsl(0, 100%, 100%)";
+      display.style.color = " hsl(198, 20%, 13%)";
+      deletebtn.style.backgroundColor = "hsl(185, 42%, 37%)";
+      deletebtn.style.boxShadow = "0 3px 1px hsl(185, 58%, 25%)";
+      resetbtn.style.backgroundColor = "hsl(185, 42%, 37%)";
+      resetbtn.style.boxShadow = "0 3px 1px hsl(185, 58%, 25%)";
+      mother.style.alignItems = "center"
+    }
+
+    thirdcolor.onclick = function(){
+      container.style.backgroundColor ="hsl(268, 71%, 12%)";
+      toggleSection.style.color ="hsl(52, 100%, 62%)";
+      section.style.backgroundColor =" hsl(268, 75%, 9%)";
+      display.style.backgroundColor = " hsl(268, 75%, 9%)";
+      display.style.color = " hsl(52, 100%, 62%)";
+      deletebtn.style.backgroundColor = "hsl(281, 89%, 26%)";
+      deletebtn.style.boxShadow = "0 3px 1px hsl(285, 91%, 52%)";
+      resetbtn.style.backgroundColor = "hsl(281, 89%, 26%)";
+      resetbtn.style.boxShadow = "0 3px 1px hsl(285, 91%, 52%)";
+      equal.style.backgroundColor = "hsl(176, 100%, 44%)";
+      equal.style.boxShadow = "0 3px 1px hsl(177, 92%, 70%)";
+      mother.style.alignItems = "flex-end"
+      daughter.style.backgroundColor = "hsl(176, 100%, 44%)"
+      
+    }
+
+      firstColor.onclick = function(){
+      container.style.backgroundColor ="hsl(222, 26%, 31%)";
+      toggleSection.style.color ="#ffffff";
+      section.style.backgroundColor =" hsl(223, 31%, 20%)";
+      display.style.backgroundColor = "  hsl(224, 36%, 15%)";
+      display.style.color = " #ffffff";
+      deletebtn.style.backgroundColor = "hsl(222, 26%, 31%)";
+      deletebtn.style.boxShadow = "hsl(185, 58%, 25%)";
+      resetbtn.style.backgroundColor = " hsl(222, 26%, 31%)";
+      resetbtn.style.boxShadow = "hsl(185, 58%, 25%);";
+      mother.style.alignItems = "flex-start"
+    }
+
+  </script>
+</body>
+</html>
