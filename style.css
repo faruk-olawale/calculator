@@ -133,6 +133,7 @@ button{
 
 #equal{
     min-width: 47%;
+  
     background-color: hsl(25, 98%, 40%);
     color: #ffffff;
     box-shadow: 0 3px 1px hsl(6, 70%, 34%);

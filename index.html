@@ -60,14 +60,25 @@
     </div>
   </div>
   <script>
- const equal = document.getElementById("equal");
-    equal.onclick = function () {
-    try {
-      display.value = eval(display.value);
-    } catch (error) {
-      display.value = "An error ocurred";
-    }
-    }
+const equal = document.getElementById("equal"); 
+equal.onclick = function () {
+  try {  
+    const result = eval(display.value);
+    display.value = Number(result).toLocaleString();
+  } catch (error) {
+    display.value = "An error occurred";
+  }
+};
+
+// const equal = document.getElementById("equal");
+//     equal.onclick = function () {
+//     try {
+//       display.value = eval(display.value);
+//     } catch (error) {
+//       display.value = "An error ocurred";
+//     }
+//     }
+
     const firstColor = document.getElementById("firstColor");
     const secondcolor = document.getElementById("secondcolor");
     const thirdcolor = document.getElementById("thirdcolor");
